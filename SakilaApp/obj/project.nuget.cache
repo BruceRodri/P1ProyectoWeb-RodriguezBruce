@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5HpwE7hteMg=",
+  "dgSpecHash": "/LD7eG57QDw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\SakilaApp.csproj",
+  "projectFilePath": "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\SakilaApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\WinterOS\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\WinterOS\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

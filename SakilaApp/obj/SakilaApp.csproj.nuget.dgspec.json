@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\SakilaApp.csproj": {}
+    "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\SakilaApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\SakilaApp.csproj": {
+    "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\SakilaApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\SakilaApp.csproj",
+        "projectUniqueName": "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\SakilaApp.csproj",
         "projectName": "SakilaApp",
-        "projectPath": "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\SakilaApp.csproj",
+        "projectPath": "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\SakilaApp.csproj",
         "packagesPath": "C:\\Users\\WinterOS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\WinterOS\\source\\repos\\SakilaApp\\SakilaApp\\obj\\",
+        "outputPath": "C:\\Users\\WinterOS\\Documents\\GitHub\\P1ProyectoWeb-RodriguezBruce\\SakilaApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
