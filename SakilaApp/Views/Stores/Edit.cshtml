@@ -1,0 +1,64 @@
+﻿@model SakilaApp.Models.Store
+
+@{
+    ViewData["Title"] = "Editar tienda";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <div class="card-header bg-dark text-white p-4">
+                <h3 class="mb-0"><i class="fas fa-store-alt me-2"></i>EDITAR CONFIGURACIÓN DE TIENDA</h3>
+            </div>
+
+            <div class="card-body p-4 bg-white">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <input type="hidden" asp-for="StoreId" />
+
+                    <div class="mb-4">
+                        <label asp-for="ManagerStaffId" class="form-label fw-bold text-muted text-uppercase small">Gerente Responsable</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="fas fa-user-tie text-primary"></i></span>
+                            <select asp-for="ManagerStaffId" class="form-select border-start-0 ps-0 shadow-sm" asp-items="ViewBag.ManagerStaffId">
+                                <option value="">-- Seleccione un Gerente --</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="ManagerStaffId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="AddressId" class="form-label fw-bold text-muted text-uppercase small">Ubicación de la Tienda</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="fas fa-map-marker-alt text-danger"></i></span>
+                            <select asp-for="AddressId" class="form-select border-start-0 ps-0 shadow-sm" asp-items="ViewBag.AddressId">
+                                <option value="">-- Seleccione una Dirección --</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="AddressId" class="text-danger small"></span>
+                    </div>
+
+                    <hr class="my-4 opacity-25">
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-warning flex-grow-1 py-2 fw-bold shadow-sm">
+                            <i class="fas fa-save me-1"></i> ACTUALIZAR TIENDA
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4 py-2">
+                            CANCELAR
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-3 text-muted small">
+            <i class="fas fa-info-circle me-1"></i> Asegúrese de que el Gerente seleccionado no esté asignado a otra tienda.
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

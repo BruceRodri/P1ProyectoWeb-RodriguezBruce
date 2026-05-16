@@ -1,0 +1,23 @@
+﻿@model SakilaApp.Models.Store
+@{
+    ViewData["Title"] = "Crear tienda";
+}
+<h1>Crear tienda</h1>
+<form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="ManagerStaffId" class="form-label"></label>
+        <input asp-for="ManagerStaffId" class="form-control" />
+        <span asp-validation-for="ManagerStaffId" class="textdanger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="AddressId" class="form-label"></label>
+        <input asp-for="AddressId" class="form-control" />
+        <span asp-validation-for="AddressId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

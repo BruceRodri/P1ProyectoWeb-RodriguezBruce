@@ -1,0 +1,11 @@
+﻿@model SakilaApp.Models.Actor
+@{
+    ViewData["Title"] = "Eliminar actor";
+}
+<h1>Eliminar actor</h1>
+<h3>¿Está seguro de eliminar a @Model.FirstName @Model.LastName?</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="ActorId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,11 @@
+﻿@model SakilaApp.Models.Category
+@{
+    ViewData["Title"] = "Eliminar categoría";
+}
+<h1>Eliminar categoría</h1>
+<h3>¿Está seguro de eliminar la categoría "@Model.Name"?</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="CategoryId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

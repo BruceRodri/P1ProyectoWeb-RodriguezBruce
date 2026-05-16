@@ -1,0 +1,65 @@
+﻿@model SakilaApp.Models.Film
+
+@{
+    ViewData["Title"] = "Editar película";
+}
+
+<h1>Editar película</h1>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="FilmId" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ReleaseYear" class="form-label"></label>
+        <input asp-for="ReleaseYear" class="form-control" />
+        <span asp-validation-for="ReleaseYear" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="RentalDuration" class="form-label"></label>
+        <input asp-for="RentalDuration" class="form-control" />
+        <span asp-validation-for="RentalDuration" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="RentalRate" class="form-label"></label>
+        <input asp-for="RentalRate" class="form-control" />
+        <span asp-validation-for="RentalRate" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Length" class="form-label"></label>
+        <input asp-for="Length" class="form-control" />
+        <span asp-validation-for="Length" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="ReplacementCost" class="form-label"></label>
+        <input asp-for="ReplacementCost" class="form-control" />
+        <span asp-validation-for="ReplacementCost" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Rating" class="form-label"></label>
+        <select asp-for="Rating" class="form-select">
+            <option>G</option>
+            <option>PG</option>
+            <option>PG-13</option>
+            <option>R</option>
+            <option>NC-17</option>
+        </select>
+        <span asp-validation-for="Rating" class="text-danger"></span>
+    </div>
+    <input type="hidden" asp-for="LanguageId" />
+    <button type="submit" class="btn btn-warning">Actualizar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

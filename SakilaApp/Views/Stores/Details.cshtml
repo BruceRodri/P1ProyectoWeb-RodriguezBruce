@@ -1,0 +1,17 @@
+﻿@model SakilaApp.Models.Store
+@{
+    ViewData["Title"] = "Detalles de la tienda";
+}
+<h1>Tienda #@Model.StoreId</h1>
+<dl class="row">
+    <dt class="col-sm-3">ID</dt>
+    <dd class="col-sm-9">@Model.StoreId</dd>
+    <dt class="col-sm-3">Manager Staff ID</dt>
+    <dd class="col-sm-9">@Model.ManagerStaffId</dd>
+    <dt class="col-sm-3">Address ID</dt>
+    <dd class="col-sm-9">@Model.AddressId</dd>
+    <dt class="col-sm-3">Última actualización</dt>
+    <dd class="col-sm-9">@Model.LastUpdate</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.StoreId" class="btn btnwarning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

@@ -1,0 +1,38 @@
+﻿@model SakilaApp.Models.Rental
+@{
+    ViewData["Title"] = "Detalles del alquiler";
+}
+
+<div class="container py-4">
+    <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+        <div class="card-header bg-info text-white py-3">
+            <h2 class="mb-0"><i class="fas fa-receipt me-2"></i>DETALLE DE ALQUILER #@Model.RentalId</h2>
+        </div>
+        <div class="card-body p-0">
+            <div class="list-group list-group-flush">
+                <div class="list-group-item d-flex p-3">
+                    <div class="col-sm-4 fw-bold text-muted text-uppercase">FECHA INICIO</div>
+                    <div class="col-sm-8">@Model.RentalDate.ToString("f")</div>
+                </div>
+                <div class="list-group-item d-flex p-3 @(Model.ReturnDate == null ? "bg-light-danger" : "")">
+                    <div class="col-sm-4 fw-bold text-muted text-uppercase">FECHA DEVOLUCIÓN</div>
+                    <div class="col-sm-8">
+                        @(Model.ReturnDate?.ToString("f") ?? "PENDIENTE DE DEVOLUCIÓN")
+                    </div>
+                </div>
+                <div class="list-group-item d-flex p-3">
+                    <div class="col-sm-4 fw-bold text-muted text-uppercase">ID CLIENTE</div>
+                    <div class="col-sm-8">@Model.CustomerId</div>
+                </div>
+                <div class="list-group-item d-flex p-3">
+                    <div class="col-sm-4 fw-bold text-muted text-uppercase">ÚLTIMA ACTUALIZACIÓN</div>
+                    <div class="col-sm-8 text-muted italic">@Model.LastUpdate</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer bg-white p-4 text-end">
+            <a asp-action="Edit" asp-route-id="@Model.RentalId" class="btn btn-warning px-4"><i class="fas fa-edit"></i> EDITAR</a>
+            <a asp-action="Index" class="btn btn-secondary px-4">VOLVER</a>
+        </div>
+    </div>
+</div>

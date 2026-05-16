@@ -1,0 +1,42 @@
+﻿@model SakilaApp.Models.Inventory
+@{
+    ViewData["Title"] = "Crear Inventario";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-dark text-white p-3 rounded-top-4">
+                <h3 class="mb-0"><i class="fas fa-boxes me-2"></i>AGREGAR ARTÍCULO AL INVENTARIO</h3>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="FilmId" class="form-label fw-bold">PELÍCULA</label>
+                        <select asp-for="FilmId" class="form-select shadow-sm" asp-items="ViewBag.FilmId">
+                            <option value="">-- SELECCIONE UNA PELÍCULA --</option>
+                        </select>
+                        <span asp-validation-for="FilmId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="StoreId" class="form-label fw-bold text-primary">TIENDA DONDE SE UBICA</label>
+                        <select asp-for="StoreId" class="form-select border-primary shadow-sm" asp-items="ViewBag.StoreId">
+                            <option value="">-- SELECCIONE TIENDA --</option>
+                        </select>
+                        <span asp-validation-for="StoreId" class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2 mt-4">
+                        <button type="submit" class="btn btn-success px-4 fw-bold shadow-sm">
+                            <i class="fas fa-plus-circle me-1"></i> REGISTRAR EN INVENTARIO
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4">CANCELAR</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

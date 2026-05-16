@@ -1,0 +1,17 @@
+﻿@model SakilaApp.Models.Actor
+@{
+    ViewData["Title"] = "Detalles del actor";
+}
+<h1>@Model.FirstName @Model.LastName</h1>
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.ActorId</dd>
+    <dt class="col-sm-2">Nombre</dt>
+    <dd class="col-sm-10">@Model.FirstName</dd>
+    <dt class="col-sm-2">Apellido</dt>
+    <dd class="col-sm-10">@Model.LastName</dd>
+    <dt class="col-sm-2">Última actualización</dt>
+    <dd class="col-sm-10">@Model.LastUpdate</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.ActorId" class="btn btnwarning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

@@ -1,0 +1,28 @@
+﻿@model SakilaApp.Models.Film
+@{
+    ViewData["Ttile"] = "Detalles de la película";
+}
+
+<h1>@Model.Title</h1>
+<dl class="row">
+    <dt class="col-sm-2">ID</dt>
+    <dd class="col-sm-10">@Model.FilmId</dd>
+    <dt class="col-sm-2">Título</dt>
+    <dd class="col-sm-10">@Model.Title</dd>
+    <dt class="col-sm-2">Descripción</dt>
+    <dd class="col-sm-10">@Model.Description</dd>
+    <dt class="col-sm-2">Año</dt>
+    <dd class="col-sm-10">@Model.ReleaseYear</dd>
+    <dt class="col-sm-2">Duración alquiler</dt>
+    <dd class="col-sm-10">@Model.RentalDuration días</dd>
+    <dt class="col-sm-2">Tarifa</dt>
+    <dd class="col-sm-10">$@Model.RentalRate</dd>
+    <dt class="col-sm-2">Duración (min)</dt>
+    <dd class="col-sm-10">@(Model.Length ?? 0)</dd>
+    <dt class="col-sm-2">Costo reemplazo</dt>
+    <dd class="col-sm-10">$@Model.ReplacementCost</dd>
+    <dt class="col-sm-2">Clasificación</dt>
+    <dd class="col-sm-10">@Model.Rating</dd>
+</dl>
+<a asp-action="Edit" asp-route-id="@Model.FilmId" class="btn btn-warning">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Volver</a>

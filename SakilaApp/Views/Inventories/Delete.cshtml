@@ -1,0 +1,11 @@
+﻿@model SakilaApp.Models.Inventory
+@{
+    ViewData["Title"] = "Eliminar inventario";
+}
+<h1>Eliminar inventario</h1>
+<h3>¿Está seguro de eliminar el registro ID @Model.InventoryId?</h3>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="InventoryId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

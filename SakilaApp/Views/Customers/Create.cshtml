@@ -1,0 +1,76 @@
+﻿@model SakilaApp.Models.Customer
+
+@{
+    ViewData["Title"] = "Crear cliente";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <h1 class="mb-4"><i class="fas fa-user-plus me-2"></i>Crear Nuevo Cliente</h1>
+
+        <form asp-action="Create" class="shadow-sm p-4 bg-white rounded-4">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="FirstName" class="form-label fw-bold">Nombre</label>
+                    <input asp-for="FirstName" class="form-control" placeholder="Ej. Juan" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="LastName" class="form-label fw-bold">Apellido</label>
+                    <input asp-for="LastName" class="form-control" placeholder="Ej. Pérez" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label fw-bold">Correo Electrónico</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                    <input asp-for="Email" class="form-control" placeholder="nombre@ejemplo.com" />
+                </div>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="StoreId" class="form-label fw-bold text-primary">Tienda de Registro</label>
+                    <select asp-for="StoreId" class="form-select border-primary" asp-items="ViewBag.StoreId">
+                        <option value="">-- Seleccione Tienda --</option>
+                    </select>
+                    <span asp-validation-for="StoreId" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="AddressId" class="form-label fw-bold text-primary">Dirección Asignada</label>
+                    <select asp-for="AddressId" class="form-select border-primary" asp-items="ViewBag.AddressId">
+                        <option value="">-- Seleccione Dirección --</option>
+                    </select>
+                    <span asp-validation-for="AddressId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="mb-4 form-check form-switch">
+                <input asp-for="Active" class="form-check-input" type="checkbox" role="switch" id="activeSwitch">
+                <label class="form-check-label fw-bold" for="activeSwitch">¿Cliente Activo?</label>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success px-4">
+                    <i class="fas fa-save me-1"></i> Guardar Cliente
+                </button>
+                <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                    Cancelar
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

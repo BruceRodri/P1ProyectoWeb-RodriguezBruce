@@ -1,0 +1,58 @@
+﻿@model SakilaApp.Models.Inventory
+@{
+    ViewData["Title"] = "Editar Inventario";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+            <div class="card-header bg-dark text-white p-4">
+                <h3 class="mb-0"><i class="fas fa-boxes me-2"></i>EDITAR ARTÍCULO DE INVENTARIO</h3>
+            </div>
+
+            <div class="card-body p-4 bg-white">
+                <form asp-action="Edit">
+                    <input type="hidden" asp-for="InventoryId" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-4">
+                        <label asp-for="FilmId" class="form-label fw-bold text-muted small uppercase">PELÍCULA ASIGNADA</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="fas fa-film text-primary"></i></span>
+                            <select asp-for="FilmId" class="form-select border-start-0 ps-0 shadow-sm" asp-items="ViewBag.FilmId">
+                                <option value="">-- SELECCIONE PELÍCULA --</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="FilmId" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label asp-for="StoreId" class="form-label fw-bold text-muted small uppercase">TIENDA / UBICACIÓN</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0"><i class="fas fa-store text-danger"></i></span>
+                            <select asp-for="StoreId" class="form-select border-start-0 ps-0 shadow-sm" asp-items="ViewBag.StoreId">
+                                <option value="">-- SELECCIONE TIENDA --</option>
+                            </select>
+                        </div>
+                        <span asp-validation-for="StoreId" class="text-danger small"></span>
+                    </div>
+
+                    <hr class="my-4 opacity-25">
+
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-warning flex-grow-1 py-2 fw-bold shadow-sm">
+                            <i class="fas fa-sync-alt me-1"></i> ACTUALIZAR REGISTRO
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4 py-2">
+                            CANCELAR
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

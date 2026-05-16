@@ -1,0 +1,44 @@
+﻿@model SakilaApp.Models.Store
+@{
+    ViewData["Title"] = "Eliminar Tienda";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-header bg-danger text-white p-3 rounded-top-4 text-center">
+                <h3 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>¿ESTÁS SEGURO?</h3>
+            </div>
+            <div class="card-body p-4 bg-white text-center">
+                <p class="lead mb-4 text-muted">ESTÁS A PUNTO DE ELIMINAR LA SIGUIENTE TIENDA DE FORMA PERMANENTE.</p>
+
+                <div class="p-3 bg-light rounded-3 mb-4 text-start">
+                    <div class="row mb-2">
+                        <div class="col-4 fw-bold">ID TIENDA:</div>
+                        <div class="col-8">#@Model.StoreId</div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-4 fw-bold">ID GERENTE:</div>
+                        <div class="col-8">@Model.ManagerStaffId</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4 fw-bold">ID DIRECCIÓN:</div>
+                        <div class="col-8">@Model.AddressId</div>
+                    </div>
+                </div>
+
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="StoreId" />
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="submit" class="btn btn-danger btn-lg px-5 fw-bold shadow-sm">
+                            <i class="fas fa-trash-alt me-2"></i>SÍ, ELIMINAR
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-lg px-5">
+                            CANCELAR
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SakilaApp.Models.Store>
+@{
+    ViewData["Title"] = "Tiendas";
+}
+<h1>Tiendas</h1>
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Crear nueva
+        tienda
+    </a>
+</p>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Manager Staff ID</th>
+            <th>Address ID</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.StoreId</td>
+                <td>@item.ManagerStaffId</td>
+                <td>@item.AddressId</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.StoreId"
+                       class="btn btn-info btn-sm">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@item.StoreId"
+                       class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.StoreId"
+                       class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

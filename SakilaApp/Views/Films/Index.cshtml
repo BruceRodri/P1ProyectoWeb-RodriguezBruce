@@ -1,0 +1,66 @@
+﻿@model IEnumerable<SakilaApp.Models.Film>
+@{
+    ViewData["Title"] = "Películas";
+}
+
+<h1>Películas</h1>
+<p><a asp-action="Create" class="btn btn-primary"> Crear nueva </a></p>
+
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Año</th>
+            <th>Duración</th>
+            <th>Tarifa</th>
+            <th>Clasificación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FilmId</td>
+                <td>@item.Title</td>
+                <td>@item.ReleaseYear</td>
+                <td>@(item.Length ?? 0) min</td>
+                <td>@item.RentalRate</td>
+                <td>@item.Rating</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.FilmId" class="btn btn-info btn-sm">Detalles</a>
+                    <a asp-action="Edit" asp-route-id="@item.FilmId" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Delete" asp-route-id="@item.FilmId" class="btn btn-danger btn-sm">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<nav aria-label="Navegacion de peliculas" class="mt-4">
+    <ul class="pagination justify-content-center">
+
+        <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage - 1 }) shadow-sm">Anterior</a>
+        </li>
+
+        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+        {
+            // MOSTRAR SOLO ALGUNAS PÁGINAS SI SON DEMASIADAS (OPCIONAL)
+            if (i == 1 || i == ViewBag.TotalPages || (i >= ViewBag.CurrentPage - 2 && i <= ViewBag.CurrentPage + 2))
+            {
+                <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                    <a class="page-link shadow-sm" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+            else if (i == ViewBag.CurrentPage - 3 || i == ViewBag.CurrentPage + 3)
+            {
+                <li class="page-item disabled"><span class="page-link">...</span></li>
+            }
+        }
+
+        <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("Index", new { page = ViewBag.CurrentPage + 1 }) shadow-sm">Siguiente</a>
+        </li>
+    </ul>
+</nav>
